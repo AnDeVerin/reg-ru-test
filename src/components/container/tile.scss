@@ -1,0 +1,73 @@
+@import '../../scss/mixin';
+
+.tile {
+  box-sizing: border-box;
+  padding: 0.25rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+  @include md {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  @include lg {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+  &_double {
+    @include md {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    @include lg {
+      flex: 0 0 66.66%;
+      max-width: 66.66%;
+    }
+    .tile__wrapper {
+      background-image: url('http://placekitten.com/800/400');
+      @include md {
+        padding-top: 29.7%;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 60%;
+    background-image: url('http://placekitten.com/460/300');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__link {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    text-decoration: none;
+  }
+
+  &__title {
+    color: #fff;
+    padding: 0 0.5rem;
+    line-height: 1.2rem;
+    background: #23272a;
+    font-weight: bolder;
+    font-size: 1.5rem;
+  }
+
+  &__description {
+    color: #fff;
+    padding: 0 0.5rem;
+    background: #7289da;
+    transition: background 200ms;
+    margin-top: 0.5rem;
+  }
+}
+
+.tile__link:hover {
+  .tile__title {
+    background: #0b0d15;
+  }
+  .tile__description {
+    background: darken(#7289da, 5%);
+  }
+}

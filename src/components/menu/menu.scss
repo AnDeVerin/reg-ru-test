@@ -1,0 +1,28 @@
+@import '../../scss/mixin';
+
+.menu {
+  padding: 1rem 1rem;
+  background: #414b6f;
+  @include md {
+    padding: 1rem 2rem;
+  }
+}
+
+.menu__list {
+  padding: 0;
+  margin: 0;
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-right: 2rem;
+  color: darken(#fff, 15%);
+  &:hover {
+    color: #fff;
+  }
+  &_active {
+    color: #fff;
+    font-weight: bolder;
+  }
+}

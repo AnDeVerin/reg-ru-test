@@ -1,0 +1,19 @@
+@import 'mixin';
+
+body {
+  font-family: Roboto, sans-serif;
+  min-width: 320px;
+  margin: 0.25rem;
+  @include md {
+    margin: 0.5rem auto;
+    max-width: 800px;
+    width: 96%;
+  }
+  @include lg {
+    max-width: 1200px;
+  }
+}
+
+.js-hidden {
+  display: none;
+}
