@@ -1,0 +1,12 @@
+.article {
+  overflow: auto;
+  &__header {
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.2rem; // background: #414b6f;
+    padding: 1rem 4rem 1rem 1rem;
+  }
+  &__text {
+    padding: 0 1rem;
+  }
+}

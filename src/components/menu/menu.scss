@@ -1,5 +1,4 @@
 @import '../../scss/mixin';
-
 .menu {
   padding: 1rem 1rem;
   background: #414b6f;
@@ -17,12 +16,15 @@
   font-size: 1.2rem;
   text-decoration: none;
   margin-right: 2rem;
-  color: darken(#fff, 15%);
+  font-weight: bolder;
+  color: darken(#fff, 35%);
   &:hover {
     color: #fff;
   }
   &_active {
     color: #fff;
-    font-weight: bolder;
+  }
+  &:focus {
+    outline: none;
   }
 }

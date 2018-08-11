@@ -4,9 +4,9 @@ import style from './menu.scss';
 import Component from '../component';
 
 const data = [
-  { title: 'Home', link: '/home' },
-  { title: 'About', link: '/about' },
-  { title: 'What ever', link: '/what-ever' },
+  { title: 'Home', link: '#' },
+  { title: 'About', link: '#about' },
+  { title: 'Contact', link: '#contact' },
 ];
 
 export default class Menu extends Component {
@@ -14,18 +14,17 @@ export default class Menu extends Component {
     super(element);
     this.render(data);
 
-    this.element.addEventListener('click', (event) => {
-      event.preventDefault();
-      this.onLinkClick(event);
+    this.on('click', ({ target }) => {
+      if (target.tagName !== 'A') return;
+
+      const activeLink = target;
+      activeLink.classList.add('menu__link_active');
+      const destination = activeLink.getAttribute('href');
+      const allLinks = Array.from(this.element.querySelectorAll('.menu__link'));
+      const passiveLinks = allLinks
+        .filter(l => l.getAttribute('href') !== destination)
+        .forEach(l => l.classList.remove('menu__link_active'));
     });
-  }
-
-  onLinkClick(event) {
-    const link = event.target.closest('.menu__link');
-
-    if (!link) return;
-    const destination = link.getAttribute('href');
-    this.trigger('menu.click', destination);
   }
 
   render(listData) {
